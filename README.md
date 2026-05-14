@@ -121,7 +121,6 @@ Open your Railway project and add:
 
 ```env
 MONGODB_URI=your_mongodb_atlas_connection_string
-PORT=5000
 ```
 
 Notes:
@@ -139,6 +138,11 @@ If MongoDB Atlas blocks Railway, go to **Network Access** in Atlas and allow:
 ```
 
 This is often needed because Railway deploys from cloud infrastructure with changing IP addresses.
+
+Important:
+
+- For local development, Atlas can allow only your own IP address.
+- For Railway deployment, Atlas should allow `0.0.0.0/0` unless you are using a stricter private-network setup.
 
 ### 5. Deploy
 
