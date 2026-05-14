@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-decoration page-decoration-one"></div>
+    <div class="page-decoration page-decoration-two"></div>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">College Project Dashboard</p>
+          <h1>Track every rupee with a cleaner personal expense flow.</h1>
+          <p class="hero-text">
+            Manage your daily spending in one place with a simple full-stack tracker built using
+            Node.js, Express, MongoDB Atlas, and Vanilla JavaScript.
+          </p>
+          <div class="hero-tags">
+            <span>CRUD Ready</span>
+            <span>MongoDB Atlas</span>
+            <span>Simple UI</span>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="summary-card">
+            <span class="summary-label">Total Expense</span>
+            <h2 id="totalAmount">Rs. 0.00</h2>
+            <p>Updated automatically whenever you add, edit, or delete an expense.</p>
+          </div>
+          <div class="mini-card">
+            <strong>Personal Expense Tracker</strong>
+            <span>Clean interface for daily expense management</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <section class="panel form-panel">
+          <div class="section-heading">
+            <p class="section-label">Expense Form</p>
+            <h3 id="formTitle">Add New Expense</h3>
+          </div>
+
+          <form id="expenseForm" class="expense-form">
+            <input type="hidden" id="expenseId" />
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input type="text" id="description" placeholder="Electricity bill, lunch, cab..." required />
+            </div>
+
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input type="number" id="amount" placeholder="Enter amount" min="0" step="0.01" required />
+            </div>
+
+            <div class="form-group">
+              <label for="category">Category</label>
+              <input type="text" id="category" placeholder="Food, Travel, Shopping..." required />
+            </div>
+
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" required />
+            </div>
+
+            <div class="button-row">
+              <button type="submit" id="submitButton">Add Expense</button>
+              <button type="button" id="cancelButton" class="secondary hidden">Cancel Edit</button>
+            </div>
+          </form>
+
+          <p id="messageBox" class="message-box"></p>
+        </section>
+
+        <section class="panel table-panel">
+          <div class="table-header">
+            <div class="section-heading">
+              <p class="section-label">Expense Records</p>
+              <h3>Expense Dashboard</h3>
+            </div>
+            <button id="refreshButton" class="secondary">Refresh</button>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Category</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="expenseTableBody">
+                <tr>
+                  <td colspan="5" class="empty-state">Loading expenses...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
