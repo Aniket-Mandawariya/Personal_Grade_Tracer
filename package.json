@@ -4,7 +4,7 @@
   "description": "A full-stack CRUD web application to track personal expenses.",
   "main": "backend/server.js",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
     "start": "node backend/server.js",
