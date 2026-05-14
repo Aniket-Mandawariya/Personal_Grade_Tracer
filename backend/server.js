@@ -8,6 +8,7 @@ dotenv.config({ path: path.join(__dirname, ".env") });
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const HOST = "0.0.0.0";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -39,8 +40,8 @@ const startServer = async () => {
   try {
     await connectDB();
 
-    app.listen(PORT, () => {
-      console.log(`Server is running on http://localhost:${PORT}`);
+    app.listen(PORT, HOST, () => {
+      console.log(`Server is running on http://${HOST}:${PORT}`);
     });
   } catch (error) {
     console.error("Server startup error:", error.message);
