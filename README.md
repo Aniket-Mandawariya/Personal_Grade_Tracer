@@ -236,3 +236,6 @@ git push -u origin main
 ## License
 
 This project is free to use for learning and college submission.
+
+## Live demo
+https://personalgradetracer-production.up.railway.app/
